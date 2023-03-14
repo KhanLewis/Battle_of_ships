@@ -7,7 +7,7 @@ class Board:
     def __init__(self, size):
         self.size = size
         self.board = []
-        for x in range(size):
+        for _ in range(size):
             self.board.append(["~"] * size)
 
     def print_board(self):
@@ -25,6 +25,8 @@ class Ship:
         self.col = randint(0, board.size - 1)
 
     def check_guess(self, guess_row, guess_col):
+        # checks the users guess  to see if there is a hit or miss also to see,
+        #  if the guess is out of bounds
         if guess_row == self.row and guess_col == self.col:
             self.board.board[guess_row][guess_col] = "!"
             print("Congratulations! You have sank my battleship!")
@@ -41,3 +43,27 @@ class Ship:
                 self.board.board[guess_row][guess_col] = "X"
                 self.board.print_board()
             return False
+
+
+class Game:
+    """defines a game class to manage the game"""
+    def __init__(self, size, ship_size):
+        self.board = Board(size)
+        self.ship = Ship(ship_size, self.board)
+        self.guesses = 5
+
+    def start_game(self):
+        # starts the game
+        print("Let's play Battleship!")
+        self.board.print_board()
+
+        for turn in range(self.guesses):
+            print("Turn", turn+1)
+            guess_row = int(input("Guess Row "))-1
+            guess_col = int(input("Guess Col "))-1
+
+            if self.ship.check_guess(guess_row, guess_col):
+                break
+
+            if turn == self.guesses - 1:
+                print("Game Over")
