@@ -1,5 +1,6 @@
 from random import randint
-""" Welcome to my battle ships game"""
+
+"""Welcome to my battle ships game"""
 
 class Board:
     """This generates the board for the game"""
