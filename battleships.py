@@ -18,15 +18,14 @@ class Board:
 
 class Ship:
     """This places the ship on the board"""
-    def __init__(self, size, board):
-        self.size = size
+    def __init__(self, board):
         self.board = board
         self.row = randint(0, board.size - 1)
         self.col = randint(0, board.size - 1)
+        print(self.row, self.col)
 
     def check_guess(self, guess_row, guess_col):
-        # checks the users guess  to see if there is a hit or miss also to see,
-        #  if the guess is out of bounds
+        """checks the users guesses and checks if they are in bounds"""
         if guess_row == self.row and guess_col == self.col:
             self.board.board[guess_row][guess_col] = "!"
             print("Congratulations! You have sank my battleship!")
@@ -47,12 +46,13 @@ class Ship:
 
 class Game:
     """defines a game class to manage the game"""
-    def __init__(self, size, ship_size):
+    def __init__(self, size,):
         self.board = Board(size)
-        self.ship = Ship(ship_size, self.board)
+        self.ship = Ship(self.board)
         self.guesses = 5
 
     def start_game(self):
+        """starts the game and checks users guess and turns """
         print("Let's play Battleship!")
         print(f"You have {self.guesses} guesses to find the ship")
         self.board.print_board()
@@ -75,6 +75,5 @@ class Game:
                 print("You have ran out of guesses ... Game Over")
 
 
-game = Game(5, 3)
+game = Game(5)
 game.start_game()
-
