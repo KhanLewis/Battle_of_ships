@@ -22,7 +22,6 @@ class Ship:
         self.board = board
         self.row = randint(0, board.size - 1)
         self.col = randint(0, board.size - 1)
-        print(self.row, self.col)
 
     def check_guess(self, guess_row, guess_col):
         """checks the users guesses and checks if they are in bounds"""
@@ -35,18 +34,18 @@ class Ship:
             if (guess_row < 0 or guess_row > self.board.size - 1) or \
                (guess_col < 0 or guess_col > self.board.size - 1):
                 print("Sorry but thats not even on the board!")
-            elif self.board.board[guess_row][guess_col] == "X":
+            elif self.board.board[guess_row][guess_col] == "?":
                 print("You have already guessed that spot!")
             else:
                 print(" Haha, You missed my battleship!")
-                self.board.board[guess_row][guess_col] = "X"
+                self.board.board[guess_row][guess_col] = "?"
                 self.board.print_board()
             return False
 
 
 class Game:
     """defines a game class to manage the game"""
-    def __init__(self, size,):
+    def __init__(self, size):
         self.board = Board(size)
         self.ship = Ship(self.board)
         self.guesses = 5
