@@ -53,17 +53,28 @@ class Game:
         self.guesses = 5
 
     def start_game(self):
-        # starts the game
         print("Let's play Battleship!")
+        print(f"You have {self.guesses} guesses to find the ship")
         self.board.print_board()
 
         for turn in range(self.guesses):
             print("Turn", turn+1)
-            guess_row = int(input("Guess Row "))-1
-            guess_col = int(input("Guess Col "))-1
+
+            while True:
+                try:
+                    guess_row = int(input("Guess Row: ")) - 1
+                    guess_col = int(input("Guess Col: ")) - 1
+                    break
+                except ValueError:
+                    print("Please enter a number")
 
             if self.ship.check_guess(guess_row, guess_col):
                 break
 
             if turn == self.guesses - 1:
-                print("Game Over")
+                print("You have ran out of guesses ... Game Over")
+
+
+game = Game(5, 3)
+game.start_game()
+
