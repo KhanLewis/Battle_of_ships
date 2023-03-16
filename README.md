@@ -2,6 +2,8 @@
 
 This battleships game is playable in the terminal and involves a player vs the computer battle! The player will try and guess the location of the computer’s battleship. The player will only have a set number of choices to find and destroy the battleship. If they player runs out of turns then it is game over… if they player finds the ship before running out of turns the they will win!
 
+<img src="images/responsive.png">
+
 # How to play:
 * The first thing you will see is an introductory message “Let’s play battleships!”. it will also display “you have 5 guesses to find the ship”. Then you will see the battle ships board a five-by-five grid with “~” displaying as the ocean. Just underneath will be your turn count.
 
@@ -11,5 +13,11 @@ This battleships game is playable in the terminal and involves a player vs the c
 This will be repeated untill you have ether destroyed the ship or have run out of turns! 
 
 ## Exsisting features:
+* Random board generation
+  * user cant see computers ship 
+     <img src="images/start.png">
 
-
+* Accepts user input so user can decide what row or column.
+* Tracks the number of turns the user has taken.
+* Error validation and input validation
+<img src="images/valid.png">
