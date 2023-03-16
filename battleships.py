@@ -24,7 +24,7 @@ class Ship:
         self.col = randint(0, board.size - 1)
 
     def check_guess(self, guess_row, guess_col):
-        """checks the users guesses and checks if they are in bounds"""
+        """checks the users guesses and if they are in bounds"""
         if guess_row == self.row and guess_col == self.col:
             self.board.board[guess_row][guess_col] = "!"
             print("Congratulations! You have sank my battleship!")
@@ -37,7 +37,7 @@ class Ship:
             elif self.board.board[guess_row][guess_col] == "?":
                 print("You have already guessed that spot!")
             else:
-                print(" Haha, You missed my battleship!")
+                print("Haha, You missed my battleship!")
                 self.board.board[guess_row][guess_col] = "?"
                 self.board.print_board()
             return False
@@ -52,7 +52,7 @@ class Game:
 
     def start_game(self):
         """starts the game and checks users guess and turns """
-        print("Let's play Battleship!")
+        print("Let's play Battleships!")
         print(f"You have {self.guesses} guesses to find the ship")
         self.board.print_board()
 
