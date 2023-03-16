@@ -33,7 +33,7 @@ class Ship:
         else:
             if (guess_row < 0 or guess_row > self.board.size - 1) or \
                (guess_col < 0 or guess_col > self.board.size - 1):
-                print("Sorry but thats not even on the board!")
+                print("Sorry but thats not even in the ocean!")
             elif self.board.board[guess_row][guess_col] == "?":
                 print("You have already guessed that spot!")
             else:
