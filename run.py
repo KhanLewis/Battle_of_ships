@@ -62,10 +62,15 @@ class Game:
             while True:
                 try:
                     guess_row = int(input("Guess Row: ")) - 1
+                    if guess_row < 0:
+                        raise ValueError()
                     guess_col = int(input("Guess Col: ")) - 1
+                    if guess_col < 0:
+                        raise ValueError()
                     break
                 except ValueError:
-                    print("Please enter a number")
+                    print(
+                     "Row or Column was invalid, please only enter a number")
 
             if self.ship.check_guess(guess_row, guess_col):
                 break
@@ -74,5 +79,6 @@ class Game:
                 print("You have ran out of guesses ... Game Over")
 
 
-game = Game(5)
-game.start_game()
+if __name__ == '__main__':
+    game = Game(5)
+    game.start_game()

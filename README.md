@@ -1,5 +1,6 @@
 # Welcome to my battleships game!
 ## [Live Website](https://battle-of-ships.herokuapp.com/)
+--- 
 
 This battleships game is playable in the terminal and involves a player vs the computer battle! The player will try and guess the location of the computer’s battleship. The player will only have a set number of choices to find and destroy the battleship. If they player runs out of turns then it is game over… if they player finds the ship before running out of turns the they will win!
 
@@ -12,12 +13,14 @@ This battleships game is playable in the terminal and involves a player vs the c
 
 * You will then see the five-by-five grid once again but this time a symbol showing ether a hit “!” or a miss “?”. If the coordinates you put in wasn’t even on the board, you will see the board displaying only the ocean. If you missed, then you turn count will increase. 
 This will be repeated untill you have ether destroyed the ship or have run out of turns! 
-
+---
 ## User stories:
 * As a visiting user, I would like to play the game of battleship
 * As a visiting user, I would like to be able to select the row and column
 * As a visiting user, I would like to see validation on errors
 * As a visiting user, I would like to see my turns increase the more I play
+
+---
 
 ## Exsisting features:
 * Random board generation
@@ -42,9 +45,7 @@ This will be repeated untill you have ether destroyed the ship or have run out o
 * Win:
 <img src="images/win.png">
 
-
-
-
+---
 
 ## Future features:
 * user can play another user
@@ -52,6 +53,14 @@ This will be repeated untill you have ether destroyed the ship or have run out o
 * user can select from a range of ships 
 * user can change orientation of ships 
 * user will be able to track wins between the computer and friends
+
+---
+
+## Technology:
+* The technology I used was:
+  * Python
+
+---
 
 ## Testing:
 
@@ -71,6 +80,12 @@ This will be repeated untill you have ether destroyed the ship or have run out o
 * step 9: The user will repeat steps 5 and 6.
 * step 10: The user will be shown a messsage if they have won or ran out of turns (see above).
 
+### Fixed bugs:
+ * User validation on same guess was not working
+ * User could enter a invalid coordinate not a number
+ * User could enter a negative number
+
+---
 
 ## Deployment:
 
@@ -83,3 +98,17 @@ This will be repeated untill you have ether destroyed the ship or have run out o
  * Select the open browser option and it will redirect you to your webpage.
 
 ### Heroku: 
+* Login to Heroku
+* Navigate to dashboard and select "New" -> "Create new app"
+* Create app name and select region
+* navigate to settings
+* Add two build packs "Python" then "Node Js" (Python has to be first)
+* Click on the deploy nav link
+* select github 
+* Enter the name of your repository and select the correct one
+* scroll down to bottom of the deploy page and select manual deploy 
+
+---
+
+## Credits:
+Code institute 
